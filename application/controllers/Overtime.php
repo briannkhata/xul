@@ -14,22 +14,30 @@ class overtime extends CI_Controller {
 	function index(){
 		$this->check_session();
 		$data['page_title']  = 'All Overtimes';
-		$this->load->view($this->session->userdata('role').'/overtimes',$data);			
+		$this->load->view($this->session->userdata('role').'/filter_overtimes',$data);			
     }
 
-	function add_overtime(){
+	function add_overtimes1(){
 		$this->check_session();
 		$data['page_title']  = 'Add Overtimes |';
-		$this->load->view($this->session->userdata('role').'/add_overtime',$data);			
+		$this->load->view($this->session->userdata('role').'/add_overtimes1',$data);			
     }
 
-	function get_users_by_branch(){
+	function add_overtimes2(){
 		$this->check_session();
 		$data['branch_id']   = $this->input->post('branch_id');
         $data['month']   = $this->input->post('month');
         $data['year']   = $this->input->post('year');
-		$data['page_title']  = 'Staff | '. $this->M_branch->get_branch($data['branch_id'] );
-		$this->load->view($this->session->userdata('role').'/get_users_by_branch',$data);			
+		$data['page_title']  =  $this->M_branch->get_branch($data['branch_id']).' | '.$data['month'].' | '.$data['year'];
+		$this->load->view($this->session->userdata('role').'/add_overtimes2',$data);			
+    }
+
+	function refresh_overtimes(){
+		$this->check_session();
+		$data['month']   = $this->input->post('month');
+        $data['year']   = $this->input->post('year');
+		$data['page_title']  = 'OVERTIMES FOR '.$data['month'].' | '.$data['year'];
+		$this->load->view($this->session->userdata('role').'/refresh_overtimes',$data);			
     }
 
    

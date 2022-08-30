@@ -149,7 +149,7 @@
 					</a>
 					<ul class="sub-menu">
 						<li>
-							<a href="<?=base_url();?>overtime/add_overtime">
+							<a href="<?=base_url();?>overtime/add_overtimes1">
 							 - Add Overtime</a>
 						</li>
 
@@ -173,7 +173,7 @@
 							 - Arrears</a>
 						</li>
 						<li>
-							<a href="<?=base_url();?>grade_group">
+							<a href="<?=base_url();?>add_overtime">
 							 - Add Overtime</a>
 						</li>
 

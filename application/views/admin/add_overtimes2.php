@@ -9,12 +9,16 @@
 							</div>
 
 						</div>
-					<form>
+				
 						<div class="portlet-body">
 							<div class="table-toolbar">
 								<div class="row">
 									<br>
 									<div class="col-md-12">
+										<a class="btn default" href="<?=base_url();?>overtime/add_overtimes1">
+											Back
+											</a>
+
 										<button class="btn default" type="submit">
 											Save Overtimes
 										</button>
@@ -23,7 +27,7 @@
 								</div>
 							</div>
 							<hr>
-							<table class="table table-striped table-bordered">
+							<table class="table table-bordered">
 							<thead>
 							<tr>
 								<th style="width:3%;">#</th>
@@ -53,7 +57,7 @@
 							</table>
 						</div>
 					</div>
-									</form>
+								
 					<!-- END EXAMPLE TABLE PORTLET-->
 				</div>
 			</div>

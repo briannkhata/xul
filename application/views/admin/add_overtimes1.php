@@ -8,7 +8,7 @@
 									</div>
 									<div class="portlet-body form">
 										<!-- BEGIN FORM-->
-										<form action="<?=base_url();?>overtime/get_users_by_branch" method="post" class="horizontal-form">
+										<form action="<?=base_url();?>overtime/add_overtimes2" method="post" class="horizontal-form">
 											<div class="form-body">
 												<br>
 												<div class="row">
