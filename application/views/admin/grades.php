@@ -27,6 +27,8 @@
 							<tr>
 								<th>Grade</th>
 								<th>Salary</th>
+								<th>Leave Days</th>
+								<th>Leave Grant</th>
 								<th>Descrition</th>
 								<th></th>
 							</tr>
@@ -36,6 +38,8 @@
 							<tr>
 								<td><?=$row['grade'];?></td>
 								<td><?=number_format($row['salary'],2);?></td>
+								<td><?=number_format($row['leavedays'],1);?></td>
+								<td><?=number_format($row['leavegrant'],2);?></td>
 								<td><?=$row['description'];?></td>
 								<td>
 									<div class="btn-group">

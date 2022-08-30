@@ -44,6 +44,32 @@ class M_grade extends CI_Model {
 		 
 	 }
 
+	 function get_leavegrant($grade_id){
+		$this->db->where('grade_id',$grade_id);
+		 $query = $this->db->get('grades')->result_array();
+		 if(count($query) > 0){
+			 foreach ($query as $row) {
+				 return $row['leavegrant'];
+			 }
+		 }else {
+			 return '';
+		 }
+		 
+	 }
+
+	 function get_leavedays($grade_id){
+		$this->db->where('grade_id',$grade_id);
+		 $query = $this->db->get('grades')->result_array();
+		 if(count($query) > 0){
+			 foreach ($query as $row) {
+				 return $row['leavedays'];
+			 }
+		 }else {
+			 return '';
+		 }
+		 
+	 }
+
 		function get_salary($grade_id){
 			$this->db->where('grade_id',$grade_id);
 		 $query = $this->db->get('grades')->result_array();

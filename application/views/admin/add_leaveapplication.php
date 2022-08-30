@@ -31,19 +31,19 @@
 													<div class="col-md-4">
 														<div class="form-group">
 															<label class="control-label">Days Applied</label>
-															<input type="text" name="amount" class="form-control" value="<?php if (!empty($amount)){echo $amount;}?>" required>
+															<input type="text" name="days_applied" class="form-control" value="<?php if (!empty($days_applied)){echo $days_applied;}?>" required>
 														</div>
 													</div>
 
-												
-
 												<div class="col-md-4">
 														<div class="form-group">
-															<label class="control-label">Month</label>
-														<select class="form-control" name="month">
+															<label class="control-label">Leave Type</label>
+														<select class="form-control" name="leavetype_id">
 															<option selected="" disabled="">Option</option>
-							<?php foreach($this->db->get('months')->result_array() as $row){?>
-							<option <?php if($month == $row['month']){ echo 'selected';}?> value="<?=$row['month'];?>"><?=$row['month'];?></option>
+																	<?php foreach($this->M_leavetype->get_leavetypes() as $row){?>
+																	<option <?php if($leavetype_id == $row['leavetype_id']){ echo 'selected';}?> value="<?=$row['leavetype_id'];?>">
+																	<?=$row['leavetype'];?>
+																</option>
 																<?php }?>
 													</select>
 												</div>
@@ -51,8 +51,16 @@
 
 											<div class="col-md-4">
 												<div class="form-group">
-													<label class="control-label">Days Applied</label>
-													<input type="text" name="amount" class="form-control" value="<?php if (!empty($amount)){echo $amount;}?>" required>
+													<label class="control-label">Start Date</label>
+													<input type="date" name="start_date" class="form-control" value="<?php if (!empty($start_date)){echo $start_date;}?>" required>
+												</div>
+											</div>
+
+
+											<div class="col-md-12">
+												<div class="form-group">
+													<label class="control-label">Comment</label>
+													<input type="text" name="comment" class="form-control" value="<?php if (!empty($comment)){echo $comment;}?>" required>
 												</div>
 											</div>
 

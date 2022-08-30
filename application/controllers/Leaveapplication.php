@@ -41,7 +41,8 @@ class leaveapplication extends CI_Controller {
 		$start_date = date('Y-m-d',strtotime($this->M_leaveapplication->get_start_date($leaveapplication_id)));
 		$data['days_approved'] = $this->input->post('days_approved');
         $data['approved_by'] = $this->session->userdata('user_id');
-		$data['end_date'] = date('Y-m-d',$start_date.'+'.$data['days_approved']);
+		$data['end_date'] = date('Y-m-d',$start_date.'+'.$data['days_approved'].' days');
+
         $data['date_approved'] = date('Y-m-d');
 		if( $data['date_approved'] == $start_date){
 			$data['leavestatus'] = 2;
@@ -61,6 +62,7 @@ class leaveapplication extends CI_Controller {
         $data['comment']  = $this->input->post('comment');
         $data['leavetype_id']    = $this->input->post('leavetype_id');
         $data['user_id']    = $this->input->post('user_id');
+		$data['date_applied'] = date('Y-m-d');
 		return $data;
     }
 
@@ -78,7 +80,8 @@ class leaveapplication extends CI_Controller {
 
 	function save(){
 		$data = $this->get_data_from_post();
-		$data['end_date'] = date('Y-m-d',strtotime($this->input->post('start_date').'+'.$this->input->post('days_applied')));
+		$data['end_date'] = date('Y-m-d',strtotime($data['start_date'].'+'.$data['days_applied'].' days'));
+
 		$update_id = $this->input->post('update_id', TRUE);
 		if (isset($update_id)){
 			$this->db->where('leaveapplication_id',$update_id);
@@ -117,7 +120,7 @@ class leaveapplication extends CI_Controller {
 		$data['deleted'] = 1;
 		$this->db->where('leaveapplication_id',$param);
         $this->db->update('leaveapplications',$data);
-    	$this->session->set_flashdata('message','Leavea pplication deleted successfully');
+    	$this->session->set_flashdata('message','Leave application deleted successfully');
 		redirect('leaveapplications');
 	}
 

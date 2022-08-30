@@ -22,6 +22,8 @@ class grade extends CI_Controller {
         $data['grade']    = $this->input->post('grade');
         $data['description']    = $this->input->post('description');
 		$data['salary']    = $this->input->post('salary');
+		$data['leavedays']    = $this->input->post('leavedays');
+		$data['leavegrant']    = $this->input->post('leavegrant');
 		return $data;
     }
 
@@ -31,6 +33,8 @@ class grade extends CI_Controller {
 		    $data['grade']  = $row['grade'];
   		    $data['description']  = $row['description'];
 			$data['salary']  = $row['salary'];
+			$data['leavedays']  = $row['leavedays'];
+			$data['leavegrant']  = $row['leavegrant'];
 		}
 		return $data;
 	}

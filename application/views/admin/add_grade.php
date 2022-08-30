@@ -26,6 +26,20 @@
 														</div>
 													</div>
 
+													<div class="col-md-6">
+														<div class="form-group">
+															<label class="control-label">Leave Days</label>
+															<input type="text" name="leavedays" class="form-control" value="<?php if (!empty($leavedays)){echo $leavedays;}?>" required>
+														</div>
+													</div>
+
+													<div class="col-md-6">
+														<div class="form-group">
+															<label class="control-label">Leave Grant</label>
+															<input type="text" name="leavegrant" class="form-control" value="<?php if (!empty($leavegrant)){echo $leavegrant;}?>" required>
+														</div>
+													</div>
+
 													<div class="col-md-12">
 														<div class="form-group">
 															<label class="control-label">Description</label>
