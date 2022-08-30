@@ -2,7 +2,7 @@
 		<div class="row">
 				<div class="col-md-12">
 					<!-- BEGIN EXAMPLE TABLE PORTLET-->
-	          <div class="portlet box grey" style="border:1px solid #E5E5E5;">
+					<div class="portlet box grey" style="border:1px solid #E5E5E5;">
 						<div class="portlet-title">
 							<div class="caption">
 								<?=$page_title;?>
@@ -14,7 +14,7 @@
 								<div class="row">
 									<br>
 									<div class="col-md-12">
-												<a href="<?=base_url();?>staff_type/read" class="btn default green-stripe">
+												<a href="<?=base_url();?>grade/read" class="btn default green-stripe">
 											Add New
 											</a>
 									</div>
@@ -25,24 +25,22 @@
 							<table class="table table-striped table-bordered">
 							<thead>
 							<tr>
-								<th>Staff type</th>
-								<th>Days</th>
-								<th>Days per Month</th>
-								<th>Hours Per Day</th>
+								<th>Grade</th>
+								<th>Salary</th>
+								<th>Descrition</th>
 								<th></th>
 							</tr>
 							</thead>
 							<tbody>
-							<?php foreach ($this->M_staff_type->get_staff_types() as $row):?>
+							<?php foreach ($this->M_grade->get_grades() as $row):?>
 							<tr>
-								<td><?=$row['staff_type'];?></td>
-								<td><?=$row['days'];?></td>
-								<td><?=$row['days_per_month'];?></td>
-								<td><?=$row['hours_per_day'];?></td>
+								<td><?=$row['grade'];?></td>
+								<td><?=number_format($row['salary'],2);?></td>
+								<td><?=$row['description'];?></td>
 								<td>
 									<div class="btn-group">
-										<a href="<?=base_url();?>staff_type/read/<?=$row['staff_type_id'];?>" class="btn btn-sm default green-stripe"><i class="fa fa-edit"></i></a>
-										<a href="<?=base_url();?>staff_type/delete/<?=$row['staff_type_id'];?>" class="btn btn-sm default red-stripe"><i class="fa fa-times-circle"></i></a>
+										<a href="<?=base_url();?>grade/read/<?=$row['grade_id'];?>" class="btn btn-sm default green-stripe"><i class="fa fa-edit"></i></a>
+										<a href="<?=base_url();?>grade/delete/<?=$row['grade_id'];?>" class="btn btn-sm default red-stripe"><i class="fa fa-times-circle"></i></a>
 									</div>
 								</td>
 							</tr>

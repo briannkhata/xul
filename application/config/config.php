@@ -25,7 +25,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 //$base_url = $_SERVER['REQUEST_SCHEME']."://".$_SERVER['HTTP_HOST']."/";
 //$config['base_url'] = $base_url;
-$config['base_url'] = 'http://127.0.0.1:8888/xul/';
+$config['base_url'] = 'http://127.0.0.1:8080/hr/';
 
 /*
 |--------------------------------------------------------------------------

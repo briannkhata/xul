@@ -14,9 +14,10 @@
 								<div class="row">
 									<br>
 									<div class="col-md-12">
-												<a href="<?=base_url();?>staff_type/read" class="btn default green-stripe">
+									
+									<a href="<?=base_url();?>pparam/read" class="btn default green-stripe">
 											Add New
-											</a>
+</a>
 									</div>
 									
 								</div>
@@ -25,24 +26,32 @@
 							<table class="table table-striped table-bordered">
 							<thead>
 							<tr>
-								<th>Staff type</th>
-								<th>Days</th>
-								<th>Days per Month</th>
-								<th>Hours Per Day</th>
+								<th>Title</th>
+								<th>Staff</th>
+								<th>Company</th>
+								<th>Active</th>
 								<th></th>
 							</tr>
 							</thead>
 							<tbody>
-							<?php foreach ($this->M_staff_type->get_staff_types() as $row):?>
+							<?php 
+							$count = 1;
+							foreach ($this->M_pparam->get_params() as $row):?>
 							<tr>
-								<td><?=$row['staff_type'];?></td>
-								<td><?=$row['days'];?></td>
-								<td><?=$row['days_per_month'];?></td>
-								<td><?=$row['hours_per_day'];?></td>
+								<td><?=strtoupper($row['title']);?></td>
+								<td><?=number_format($row['staff'],2);?> %</td>
+								<td><?=number_format($row['company'],2);?> %</td>
+								<td>
+									<?php if($row['active'] == 1):?>
+										Active
+									<?php else:?>
+										Not Active
+									<?php endif;?>
+								</td>				
 								<td>
 									<div class="btn-group">
-										<a href="<?=base_url();?>staff_type/read/<?=$row['staff_type_id'];?>" class="btn btn-sm default green-stripe"><i class="fa fa-edit"></i></a>
-										<a href="<?=base_url();?>staff_type/delete/<?=$row['staff_type_id'];?>" class="btn btn-sm default red-stripe"><i class="fa fa-times-circle"></i></a>
+										<a href="<?=base_url();?>pparam/read/<?=$row['pparam_id'];?>" class="btn btn-sm default green-stripe"><i class="fa fa-edit"></i></a>
+										<a href="<?=base_url();?>pparam/delete/<?=$row['pparam_id'];?>" class="btn btn-sm default red-stripe"><i class="fa fa-times-circle"></i></a>
 									</div>
 								</td>
 							</tr>

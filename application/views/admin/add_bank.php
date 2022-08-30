@@ -8,39 +8,34 @@
 									</div>
 									<div class="portlet-body form">
 										<!-- BEGIN FORM-->
-										<form action="<?=base_url();?>staff_type/save" method="post" class="horizontal-form">
+										<form action="<?=base_url();?>bank/save" method="post" class="horizontal-form">
 											<div class="form-body">
 												<br>
 												<div class="row">
-												
 
 													<div class="col-md-12">
 														<div class="form-group">
-															<label class="control-label">Staff type</label>
-															<input type="text" name="staff_type" class="form-control" value="<?php if (!empty($staff_type)){echo $staff_type;}?>" required>
+															<label class="control-label">Bank</label>
+															<input type="text" name="bank" class="form-control" value="<?php if (!empty($bank)){echo $bank;}?>" required>
+														</div>
+													</div>
+													<div class="col-md-6">
+														<div class="form-group">
+															<label class="control-label">Code</label>
+														<input type="text" name="code" class="form-control" value="<?php if (!empty($code)){echo $code;}?>" required>
+															
 														</div>
 													</div>
 
-													<div class="col-md-4">
+													<div class="col-md-6">
 														<div class="form-group">
-															<label class="control-label">Working Days</label>
-															<input type="text" name="days" class="form-control" value="<?php if (!empty($days)){echo $days;}?>" required>
-														</div>
-													</div>
-													<div class="col-md-4">
-														<div class="form-group">
-															<label class="control-label">Days Per Month</label>
-															<input type="text" name="days_per_month" class="form-control" value="<?php if (!empty($days_per_month)){echo $days_per_month;}?>" required>
+															<label class="control-label">Abbreviation</label>
+														<input type="text" name="code" class="form-control" value="<?php if (!empty($code)){echo $abbrev;}?>" required>
+															
 														</div>
 													</div>
 
-													<div class="col-md-4">
-														<div class="form-group">
-															<label class="control-label">Days Per Month</label>
-															<input type="text" name="hours_per_day" class="form-control" value="<?php if (!empty($hours_per_day)){echo $hours_per_day;}?>" required>
-														</div>
-													</div>
-
+																	
 												</div>
 												
 											</div>
@@ -49,7 +44,7 @@
                                                      <input type="hidden" name="update_id" id="update_id" value="<?=$update_id;?>">
                                                   <?php }?>
 												<button type="submit" class="btn default blue-stripe"> Save</button>
-												<a href="<?=base_url();?>staff_type" class="btn default green-stripe"> Back</a>
+												<a href="<?=base_url();?>bank" class="btn default green-stripe"> Back</a>
 											</div>
 										</form>
 										<!-- END FORM-->

@@ -43,39 +43,76 @@
 				<li>
 					<a href="javascript:;">
 					<i class="fa fa-gears"></i>
-					<span class="title">Academics</span>
+					<span class="title">Configs</span>
 					<span class="arrow "></span>
 					</a>
 					<ul class="sub-menu">
 						<li>
-							<a href="<?=base_url();?>academic_year">
-							- Academic Years</a>
+							<a href="<?=base_url();?>User/Settings">
+							- Set Up</a>
 						</li>
 
 						<li>
-							<a href="<?=base_url();?>term">
-							- Terms</a>
+							<a href="<?=base_url();?>Department">
+							- Departments</a>
 						</li>
 
 						<li>
-							<a href="<?=base_url();?>section">
-							 - Sections</a>
+							<a href="<?=base_url();?>Branch">
+							 - Branches</a>
 						</li>
 
 						<li>
-							<a href="<?=base_url();?>subject">
-							 - Subjects</a>
+							<a href="<?=base_url();?>Taxband">
+							 - Tax Bands</a>
 						</li>
 						<li>
-							<a href="<?=base_url();?>study_mode">
-							 - Mode of study</a>
+							<a href="<?=base_url();?>Pparam">
+							 - Pension Parameters</a>
+						</li>
+						<li>
+							<a href="<?=base_url();?>grade">
+							 - Grades</a>
 						</li>
 
 						<li>
-							<a href="<?=base_url();?>scholarship_type">
-							 - Scholarship types</a>
+							<a href="<?=base_url();?>Job">
+							 - Jobs</a>
 						</li>
-					
+
+						<li>
+							<a href="<?=base_url();?>Jobrequirement">
+							 - Job Requirements</a>
+						</li>
+
+						<li>
+							<a href="<?=base_url();?>Bank">
+							 - Banks</a>
+						</li>
+						<li>
+							<a href="<?=base_url();?>Staff_type">
+							 - Staff Types</a>
+						</li>
+
+						<li>
+							<a href="<?=base_url();?>Leavetype">
+							 - Leave Types</a>
+						</li>
+						<li>
+							<a href="<?=base_url();?>Overtimetype">
+							 - Overtime Types</a>
+						</li>
+
+						
+						<li>
+							<a href="<?=base_url();?>department">
+							 - Departments</a>
+						</li>
+
+						<li>
+							<a href="<?=base_url();?>Attendancecode">
+							 - Attendance Codes</a>
+						</li>
 					</ul>
 				</li>		
 				<li>
@@ -85,53 +122,21 @@
 					<span class="arrow "></span>
 					</a>
 					<ul class="sub-menu">
-						<li>
-							<a href="<?=base_url();?>user/students">
-							- Students</a>
-						</li>
-						<li>
-							<a href="<?=base_url();?>parento">
-							- Parents</a>
-						</li>
 
 						<li>
-							<a href="<?=base_url();?>department">
-							 - Departments</a>
-						</li>
-
-						<li>
-							<a href="<?=base_url();?>staff_type">
-							 - Staff type</a>
-						</li>
-
-						<li>
-							<a href="<?=base_url();?>user/staffs">
+							<a href="<?=base_url();?>User">
 							- Staff</a>
 						</li>
-
 						<li>
-							<a href="<?=base_url();?>responsibility">
-							 - Responsibilities</a>
+							<a href="<?=base_url();?>User/read">
+							 - Create Staff</a>
 						</li>
 
 						<li>
-							<a href="<?=base_url();?>discipline">
-							 - Discipline</a>
+							<a href="<?=base_url();?>Role">
+							 - Roles</a>
 						</li>
 
-						<li>
-							<a href="<?=base_url();?>scholarship">
-							 - Scholarships</a>
-						</li>
-
-						<li>
-							<a href="<?=base_url();?>duty">
-							 - Duty</a>
-						</li>
-						<li>
-							<a href="<?=base_url();?>user/graduates">
-							 - Graduates</a>
-						</li>
 					
 					</ul>
 				</li>
@@ -139,171 +144,85 @@
 				<li>
 					<a href="javascript:;">
 					<i class="fa fa-file"></i>
-					<span class="title">Examinations</span>
+					<span class="title">Manage Earnings</span>
 					<span class="arrow "></span>
 					</a>
 					<ul class="sub-menu">
 						<li>
 							<a href="<?=base_url();?>grade_group">
-							 - Grade groups</a>
-						</li>
-
-						
-						<li>
-							<a href="<?=base_url();?>grade_level">
-							 - Grade Levels</a>
+							 - Add Overtime</a>
 						</li>
 
 						<li>
-							<a href="<?=base_url();?>grade_point">
-							 - Grade Points</a>
+							<a href="<?=base_url();?>bonus/read">
+							 - Add Bonus</a>
 						</li>
 
 						<li>
-							<a href="<?=base_url();?>grade_remark">
-							 - Grade Remarks</a>
-						</li>
-						<li>
-							<a href="<?=base_url();?>examination">
-							- Examinations</a>
-						</li>
-						<li>
-							<a href="<?=base_url();?>examination_paper">
-							- Examination papers</a>
-						</li>
-						<li>
-							<a href="<?=base_url();?>assesment_type">
-							- Assesment types</a>
-						</li>
-						<li>
-							<a href="<?=base_url();?>assesment">
-							- Assesments</a>
-						</li>
-						<li>
-							<a href="<?=base_url();?>examination/filter_examination">
-							- Add Exam Marks</a>
-						</li>
-						<li>
-							<a href="<?=base_url();?>examination/swatch1">
-							- Swatch Double Papers</a>
-						</li>
-						<li>
-							<a href="<?=base_url();?>assesment/filter_assesment">
-							- Filter Assesment Marks</a>
-						</li>
-						<li>
-							<a href="<?=base_url();?>examination/filter_examination2">
-							- Filter Exam Marks (Subject)</a>
+							<a href="<?=base_url();?>arrear/read">
+							 - Add Arrear</a>
 						</li>
 
 						<li>
-							<a href="<?=base_url();?>examination/filter_examination4">
-							- Filter Exam Marks (Papers)</a>
-						</li>
-						<li>
-							<a href="<?=base_url();?>examination/filter_report_cards">
-							- Report Cards</a>
+							<a href="<?=base_url();?>bonus">
+							 - Bonuses</a>
 						</li>
 
-					
 						<li>
-							<a href="<?=base_url();?>examination/filter_marksheet">
-							- Marksheet</a>
-						</li>
-						
-					</ul>
-				</li>
-				<li>
-					<a href="javascript:;">
-					<i class="fa fa-money"></i>
-					<span class="title">Accounting</span>
-					<span class="arrow "></span>
-					</a>
-					<ul class="sub-menu">
-						<li>
-							<a href="<?=base_url();?>charge_type">
-							 - Charge types</a>
+							<a href="<?=base_url();?>arrear">
+							 - Arrears</a>
 						</li>
 						<li>
-							<a href="<?=base_url();?>income_type">
-							 - Income types</a>
+							<a href="<?=base_url();?>grade_group">
+							 - Add Overtime</a>
 						</li>
+
 						<li>
-							<a href="<?=base_url();?>expense_type">
-							 - Expense types</a>
+							<a href="<?=base_url();?>grade_group">
+							 - Buld Add Overtime</a>
 						</li>
+
 						<li>
-							<a href="<?=base_url();?>expense">
-							- Expenses</a>
+							<a href="<?=base_url();?>Overtime/filter">
+							 - Filter Overtimes</a>
 						</li>
-						<li>
-							<a href="<?=base_url();?>income">
-							- Incomes</a>
-						</li>
-						<li>
-							<a href="<?=base_url();?>charge">
-							- Charges</a>
-						</li>
-						<li>
-							<a href="<?=base_url();?>payment">
-							- Payments</a>
-						</li>
-						
-						
+
 					</ul>
 				</li>
 
 					<li>
 					<a href="javascript:;">
-					<i class="fa fa-file"></i>
-					<span class="title">Library</span>
+					<i class="fa fa-filter"></i>
+					<span class="title">Health Schemes</span>
 					<span class="arrow "></span>
 					</a>
 					<ul class="sub-menu">
 						<li>
-							<a href="<?=base_url();?>book_category">
-							 - Categories</a>
+							<a href="<?=base_url();?>schemetype">
+							 - Scheme types</a>
 						</li>
 						<li>
-							<a href="<?=base_url();?>book_shelf">
-							 - Book Shelves</a>
+							<a href="<?=base_url();?>membershiptype">
+							 - Membership types</a>
 						</li>
 						<li>
-							<a href="<?=base_url();?>book">
-							- Books</a>
+							<a href="<?=base_url();?>beneficiary">
+							- Benefiaries</a>
 						</li>
-						<li>
-							<a href="<?=base_url();?>book_rentout">
-							- Rent Outs</a>
-						</li>
-						<li>
-							<a href="<?=base_url();?>book/receivings">
-							- Receivings</a>
-						</li>
-
-						
-						<li>
-							<a href="<?=base_url();?>book/filter_books">
-							- Book Report</a>
-						</li>	
-						<li>
-							<a href="<?=base_url();?>book/filter_student_books">
-							- User Books</a>
-						</li>					
-						
+					
 					</ul>
 				</li>
 
 				<li>
 					<a href="javascript:;">
-					<i class="fa fa-calendar"></i>
-					<span class="title">Attendance</span>
+					<i class="fa fa-money"></i>
+					<span class="title">Salary Management</span>
 					<span class="arrow "></span>
 					</a>
 					<ul class="sub-menu">
 						<li>
 							<a href="<?=base_url();?>attendance_code">
-							- Attendance Codes</a>
+							- Bonttendance Codes</a>
 						</li>
 						<li>
 							<a href="<?=base_url();?>attendance/filter_staff_attendance">
@@ -335,71 +254,34 @@
 
 				<li>
 					<a href="javascript:;">
-					<i class="fa fa-filter"></i>
-					<span class="title">Hostel</span>
+					<i class="fa fa-calendar"></i>
+					<span class="title">Leave Management</span>
 					<span class="arrow "></span>
 					</a>
 					<ul class="sub-menu">
-						<li>
-							<a href="<?=base_url();?>hostel_type">
-							- Hostel types</a>
-						</li>
-						<li>
-							<a href="<?=base_url();?>hostel">
-							- Hostels</a>
+
+					<li>
+							<a href="<?=base_url();?>leaveapplication/read">
+							- Create Leave</a>
 						</li>
 
 						<li>
-							<a href="<?=base_url();?>hostel_prefect">
-							- Prefects</a>
+							<a href="<?=base_url();?>leaveapplication">
+							- Leave Applications</a>
 						</li>
 
 						<li>
-							<a href="<?=base_url();?>hostel/student_hostels">
-							- Occupants</a>
+							<a href="<?=base_url();?>leaveapplication/approved">
+							- Approved Applications</a>
 						</li>
 
 						<li>
-							<a href="<?=base_url();?>Hostel/filter_hostels">
-							- Filter Hostels</a>
+							<a href="<?=base_url();?>leaveapplication/approved">
+							- On Leave</a>
 						</li>
-						
 					</ul>
 				</li>
 
-				<li>
-					<a href="javascript:;">
-					<i class="fa fa-flask"></i>
-					<span class="title">Laboratory</span>
-					<span class="arrow "></span>
-					</a>
-					<ul class="sub-menu">
-						<li>
-							<a href="<?=base_url();?>lab_shelf">
-							- Shelfs</a>
-						</li>
-						<li>
-							<a href="<?=base_url();?>lab_type">
-							- Categories</a>
-						</li>
-
-						<li>
-							<a href="<?=base_url();?>lab_item">
-							- Items</a>
-						</li>
-
-						<li>
-							<a href="<?=base_url();?>lab_item/receivings">
-							- Receivings</a>
-						</li>
-
-						<li>
-							<a href="<?=base_url();?>lab_item/filter_lab_items">
-							- Lab Report</a>
-						</li>
-						
-					</ul>
-				</li>
 
 				<li>
 					<a href="javascript:;">
@@ -426,14 +308,6 @@
 				</li>
 			
 			
-			
-				<li>
-					<a href="<?=base_url();?>user/settings">
-					<i class="fa fa-cogs"></i>
-					<span class="title">Settings</span>
-					</a>
-						
-				</li>
 				
 			</ul>
 			<!-- END SIDEBAR MENU -->

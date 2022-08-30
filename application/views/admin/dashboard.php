@@ -3,10 +3,10 @@
 			<!-- BEGIN DASHBOARD STATS -->
 	<?php
 
-	$academic_year_id = $this->M_academic_year->get_active_academic_year();
+	/*$academic_year_id = $this->M_academic_year->get_active_academic_year();
 	$term_id = $this->M_term->get_active_term();
 	$female = $this->M_user->get_female_students($academic_year_id);
-	$male = $this->M_user->get_male_students($academic_year_id);
+	$male = $this->M_user->get_male_students($academic_year_id);*/
 	?>
 
 
@@ -14,19 +14,19 @@
 			<div class="row">
 			
 				<div class="col-lg-4 col-md-3 col-sm-6 col-xs-12">
-					<div class="dashboard-stat grey">
+					<div class="dashboard-stat yellow">
 						<div class="visual">
-							<i class="fa fa-graduation-cap"></i>
+							<i class="fa fa-users"></i>
 						</div>
 						<div class="details">
 							<div class="number">
-								<?=count($female + $male);?>
+								<?=count($this->M_user->get_users_by_gender('Female'));?>
 							</div>
 							<div class="desc">
-								 Total Students
+								 Female Staff
 							</div>
 						</div>
-						<a class="more" href="<?=base_url();?>user/students">
+						<a class="more" href="<?=base_url();?>User/female">
 						View more <i class="m-icon-swapright m-icon-white"></i>
 						</a>
 					</div>
@@ -35,42 +35,24 @@
 				<div class="col-lg-4 col-md-3 col-sm-6 col-xs-12">
 					<div class="dashboard-stat grey">
 						<div class="visual">
-							<i class="fa fa-graduation-cap"></i>
+							<i class="fa fa-users"></i>
 						</div>
 						<div class="details">
 							<div class="number">
-								<?=count($female);?>
+							<?=count($this->M_user->get_users_by_gender('Male'));?>
 							</div>
 							<div class="desc">
-								Female Students
+								Male Staff
 							</div>
 						</div>
-						<a class="more" href="<?=base_url();?>user/female">
+						<a class="more" href="<?=base_url();?>User/male">
 						View more <i class="m-icon-swapright m-icon-white"></i>
 						</a>
 					</div>
 				</div>
 
-				<div class="col-lg-4 col-md-3 col-sm-6 col-xs-12">
-					<div class="dashboard-stat grey">
-						<div class="visual">
-							<i class="fa fa-graduation-cap"></i>
-						</div>
-						<div class="details">
-							<div class="number">
-								<?=count($male);?>
-							</div>
-							<div class="desc">
-								Male Students
-							</div>
-						</div>
-						<a class="more" href="<?=base_url();?>user/male">
-						View more <i class="m-icon-swapright m-icon-white"></i>
-						</a>
-					</div>
-				</div>
+				
 
-			<?php foreach($this->M_grade_level->get_grade_levels() as $row){?>
 				<div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
 					<div class="dashboard-stat blue-madison">
 						<div class="visual">
@@ -78,18 +60,18 @@
 						</div>
 						<div class="details">
 							<div class="number">
-								<?=count($this->M_user->get_students_by_class($row['grade_level_id']));?>
+								<?=count($this->M_department->get_departments());?>
 							</div>
 							<div class="desc">
-								<?=$row['grade_level'];?> students
+								Departments
 							</div>
 						</div>
-						<a class="more" href="#">
+						<a class="more" href="<?=base_url();?>Department">
 						View more <i class="m-icon-swapright m-icon-white"></i>
 						</a>
 					</div>
 				</div>
-			<?php }?>
+
 				<div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
 					<div class="dashboard-stat red-intense">
 						<div class="visual">
@@ -97,13 +79,13 @@
 						</div>
 						<div class="details">
 							<div class="number">
-								<?=count($this->M_user->get_staffs());?>
+							<?=count($this->M_branch->get_branches());?>
 							</div>
 							<div class="desc">
-								 Staffs
+								 Branches
 							</div>
 						</div>
-						<a class="more" href="<?=base_url();?>user/staffs">
+						<a class="more" href="<?=base_url();?>Branch">
 						View more <i class="m-icon-swapright m-icon-white"></i>
 						</a>
 					</div>
@@ -114,42 +96,64 @@
 
 
 			<div class="row">
-				<div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
-					<div class="dashboard-stat green-haze">
-						<div class="visual">
-							<i class="fa fa-circle"></i>
-						</div>
-						<div class="details">
-							<div class="number">
-								<?php //=count($this->M_circle->get_next_waters());?>
-							</div>
-							<div class="desc">
-								Orphans
-							</div>
-						</div>
-						<a class="more" href="<?=base_url();?>member/next">
-						View more <i class="m-icon-swapright m-icon-white"></i>
-						</a>
-					</div>
-				</div>
-				<!-- class="col-lg-6 col-md-3 col-sm-6 col-xs-12">
+				
+			<div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
 					<div class="dashboard-stat blue">
 						<div class="visual">
 							<i class="fa fa-users"></i>
 						</div>
 						<div class="details">
 							<div class="number">
-								<?php//=count($this->M_circle->get_past_waters());?>
+								00
 							</div>
 							<div class="desc">
-								 Past Waters
+								 Employee Present
 							</div>
 						</div>
 						<a class="more" href="<?=base_url();?>member/past">
 						View more <i class="m-icon-swapright m-icon-white"></i>
 						</a>
 					</div>
-				</div-->
+				</div>
+
+
+				<div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+					<div class="dashboard-stat blue">
+						<div class="visual">
+							<i class="fa fa-users"></i>
+						</div>
+						<div class="details">
+							<div class="number">
+								00
+							</div>
+							<div class="desc">
+								 Employee Absent
+							</div>
+						</div>
+						<a class="more" href="<?=base_url();?>member/past">
+						View more <i class="m-icon-swapright m-icon-white"></i>
+						</a>
+					</div>
+				</div>
+
+				<div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+					<div class="dashboard-stat blue">
+						<div class="visual">
+							<i class="fa fa-users"></i>
+						</div>
+						<div class="details">
+							<div class="number">
+								00
+							</div>
+							<div class="desc">
+								 Late Comers
+							</div>
+						</div>
+						<a class="more" href="<?=base_url();?>member/past">
+						View more <i class="m-icon-swapright m-icon-white"></i>
+						</a>
+					</div>
+				</div>
 			</div>
 
 		

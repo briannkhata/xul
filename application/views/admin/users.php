@@ -12,37 +12,34 @@
 						<div class="portlet-body">
 							<div class="table-toolbar">
 								<div class="row">
-									<br>
-									<div class="col-md-12">
-												<a href="<?=base_url();?>staff_type/read" class="btn default green-stripe">
-											Add New
-											</a>
-									</div>
-									
+								
 								</div>
 							</div>
 							<hr>
 							<table class="table table-striped table-bordered">
 							<thead>
 							<tr>
-								<th>Staff type</th>
-								<th>Days</th>
-								<th>Days per Month</th>
-								<th>Hours Per Day</th>
+								<th>Name</th>
+								<th>National Id</th>
+								<th>Phone</th>
+								<th>Email</th>
 								<th></th>
 							</tr>
 							</thead>
 							<tbody>
-							<?php foreach ($this->M_staff_type->get_staff_types() as $row):?>
+							<?php 
+							foreach ($this->M_user->get_users() as $row):?>
 							<tr>
-								<td><?=$row['staff_type'];?></td>
-								<td><?=$row['days'];?></td>
-								<td><?=$row['days_per_month'];?></td>
-								<td><?=$row['hours_per_day'];?></td>
+								<td><?=strtoupper($row['name']);?> - <?=$row['gender'];?></td>
+								<td><?=$row['national_id'];?></td>
+								<td><?=$row['phone1'];?></td>
+								<td><?=$row['email1'];?></td>
 								<td>
 									<div class="btn-group">
-										<a href="<?=base_url();?>staff_type/read/<?=$row['staff_type_id'];?>" class="btn btn-sm default green-stripe"><i class="fa fa-edit"></i></a>
-										<a href="<?=base_url();?>staff_type/delete/<?=$row['staff_type_id'];?>" class="btn btn-sm default red-stripe"><i class="fa fa-times-circle"></i></a>
+										<a href="<?=base_url();?>user/read/<?=$row['user_id'];?>" class="btn btn-sm default green-stripe"><i class="fa fa-edit"></i></a>
+										<a href="<?=base_url();?>user/delete/<?=$row['user_id'];?>" class="btn btn-sm default red-stripe"><i class="fa fa-times-circle"></i></a>
+										<a href="<?=base_url();?>user/View/<?=$row['user_id'];?>" class="btn btn-sm default blue-stripe">View</a>
+
 									</div>
 								</td>
 							</tr>

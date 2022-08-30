@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-class staff_type extends CI_Controller {
+class Staff_type extends CI_Controller {
 
 	function __construct(){
 		parent::__construct();
@@ -13,19 +13,25 @@ class staff_type extends CI_Controller {
 
 	function index(){
 		$this->check_session();
-		$data['page_title']  = 'staff types';
+		$data['page_title']  = 'Staff types';
 		$this->load->view($this->session->userdata('role').'/staff_types',$data);			
     }
 
     function get_data_from_post(){
         $data['staff_type']    = $this->input->post('staff_type');
+		$data['days']    = $this->input->post('days');
+		$data['hours_per_day']    = $this->input->post('hours_per_day');
+		$data['days_per_month']    = $this->input->post('days_per_month');
 		return $data;
     }
 
     function get_data_from_db($update_id){
 		$query = $this->M_staff_type->get_staff_type_by_id($update_id);
 		foreach ($query as $row) {
-		    $data['staff_type']    = $row['staff_type'];
+			$data['staff_type'] = $row['staff_type'];
+			$data['days']  = $row['days'];
+			$data['hours_per_day'] = $row['hours_per_day'];
+			$data['days_per_month'] = $row['days_per_month'];
 		}
 		return $data;
 	}

@@ -140,12 +140,10 @@ $autoload['language'] = array();
 |	$autoload['model'] = array('first_model' => 'first');
 */
 $autoload['model'] = array(
-
-	'M_section','M_lab_shelf','M_examination_paper','M_user','M_assesment','M_examination','M_department',
-	'M_academic_year','M_term','M_grade_level','M_subject','M_study_mode','M_scholarship','M_responsibility',
-	'M_charge_type','M_grade_group','M_grade_point','M_assesment_type','M_staff_type','M_attendance_code',
-	'M_grade_remark','M_discipline','M_sms','M_expense','M_income','M_book_category','M_book','M_book_rentout',
-	'M_duty','M_income_type','M_expense_type','M_payment','M_attendance','M_book_shelf','M_lab_type','M_lab_item',
-	'M_scholarship_type','M_hostel_type','M_hostel','M_hostel_prefect','M_charge'
-
+	'M_branch','M_grade','M_job','M_user','M_leavetype','M_overtimetype','M_department',
+	'M_taxband','M_jobrequirement','M_bank','M_membershiptype','M_schemetype','M_beneficiary','M_arrear',
+	'M_bonus','M_grade_point','M_pparam','M_staff_type','M_attendancecode',
+	'M_grade_remark','M_leaveapplication','M_sms','M_expense','M_income',
+	'M_income_type','M_expense_type','M_payment','M_attendance','M_book_shelf',
+	'M_scholarship_type','M_hostel_type','M_hostel','M_hostel_prefect'
 );

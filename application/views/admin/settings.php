@@ -16,7 +16,7 @@
 													<div class="col-md-12">
 														<div class="form-group">
 															<label class="control-label">Name</label>
-														<input type="text" class="form-control" name="app" value="<?=$row['app'];?>">
+														<input type="text" class="form-control" name="company" value="<?=$row['company'];?>">
 														<input type="hidden" name="id" value="<?=$row['id'];?>">
 														
 														</div>
@@ -26,51 +26,74 @@
 
 												
 												<div class="row">
-													<div class="col-md-6">
+													<div class="col-md-4">
 														<div class="form-group">
-															<label class="control-label">Primary Phone</label>
-															<input type="tel" class="form-control" name="phone" value="<?=$row['phone'];?>">														
+															<label class="control-label">Primary Phone1</label>
+															<input type="tel" class="form-control" name="phone1" value="<?=$row['phone1'];?>">														
 														</div>
 													</div>
 
-											
-													<div class="col-md-6">
+													<div class="col-md-4">
+														<div class="form-group">
+															<label class="control-label">Alt Phone 1</label>
+															<input type="tel" class="form-control" name="phone2" value="<?=$row['phone2'];?>">														
+														</div>
+													</div>
+
+													<div class="col-md-4">
+														<div class="form-group">
+															<label class="control-label">Alt Phone 2</label>
+															<input type="tel" class="form-control" name="phone3" value="<?=$row['phone3'];?>">														
+														</div>
+													</div>
+
+											</div>
+
+													<div class="row">
+
+													<div class="col-md-4">
 														<div class="form-group">
 															<label class="control-label">Primary Email</label>
-															<input type="email" class="form-control" name="email" value="<?=$row['email'];?>">														
+															<input type="email" class="form-control" name="email1" value="<?=$row['email1'];?>">														
 														</div>
 													</div>
 
-												</div>
-
-												<div class="row">
-													<div class="col-md-12">
+													<div class="col-md-4">
 														<div class="form-group">
-															<label class="control-label">Principal Signature</label>
-															<input type="file" class="form-control" name="head_sign" value="<?=$row['head_sign'];?>">														
+															<label class="control-label">Alt Email 2</label>
+															<input type="email" class="form-control" name="email2" value="<?=$row['email2'];?>">														
 														</div>
 													</div>
+
+													<div class="col-md-4">
+														<div class="form-group">
+															<label class="control-label">Alt Email 3</label>
+															<input type="email" class="form-control" name="email3" value="<?=$row['email3'];?>">														
+														</div>
+													</div>
+
 												</div>
 
-											
 												<div class="row">
 													<div class="col-md-6">
 														<div class="form-group">
-															<label class="control-label">Address</label>
-															<textarea class="form-control" name="address">
-																<?=$row['address'];?>
+															<label class="control-label">Physical Address</label>
+															<textarea class="form-control" name="physical_address">
+																<?=$row['physical_address'];?>
+															</textarea>
+														</div>
+													</div>
+
+													<div class="col-md-6">
+														<div class="form-group">
+															<label class="control-label">Contact Address</label>
+															<textarea class="form-control" name="contact_address">
+																<?=$row['contact_address'];?>
 															</textarea>
 														</div>
 													</div>
 												
-													<div class="col-md-6">
-														<div class="form-group">
-															<label class="control-label">Motto</label>
-															<textarea class="form-control" name="motto">
-																<?=$row['motto'];?>
-															</textarea>
-														</div>
-													</div>
+													
 												</div>
 												
 											</div>
