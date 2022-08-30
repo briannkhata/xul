@@ -14,7 +14,30 @@ class bonus extends CI_Controller {
 	function index(){
 		$this->check_session();
 		$data['page_title']  = 'Bonuses';
-		$this->load->view($this->session->userdata('role').'/bonuses',$data);			
+		$this->load->view($this->session->userdata('role').'/filter_bonuses',$data);			
+    }
+
+	function refresh_bonuses(){
+		$this->check_session();
+		$data['month']   = $this->input->post('month');
+        $data['year']   = $this->input->post('year');
+		$data['page_title']  = 'BONUSES FOR '.$data['month'].' | '.$data['year'];
+		$this->load->view($this->session->userdata('role').'/refresh_bonuses',$data);			
+    }
+
+	function add_bonus1(){
+		$this->check_session();
+		$data['page_title']  = 'Add bonus |';
+		$this->load->view($this->session->userdata('role').'/add_bonus1',$data);			
+    }
+
+	function add_bonus2(){
+		$this->check_session();
+		$data['branch_id']   = $this->input->post('branch_id');
+        $data['month']   = $this->input->post('month');
+        $data['year']   = $this->input->post('year');
+		$data['page_title']  = 'Staff | '. $this->M_branch->get_branch($data['branch_id'] ).' | '.$data['month'].' | '.$data['year'];
+		$this->load->view($this->session->userdata('role').'/add_bonus2',$data);			
     }
 
     function get_data_from_post(){

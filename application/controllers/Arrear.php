@@ -14,7 +14,30 @@ class arrear extends CI_Controller {
 	function index(){
 		$this->check_session();
 		$data['page_title']  = 'Arrears';
-		$this->load->view($this->session->userdata('role').'/arrears',$data);			
+		$this->load->view($this->session->userdata('role').'/filter_arrears',$data);			
+    }
+
+	function add_arrears1(){
+		$this->check_session();
+		$data['page_title']  = 'Add Arrears |';
+		$this->load->view($this->session->userdata('role').'/add_arrears1',$data);			
+    }
+
+	function add_arrears2(){
+		$this->check_session();
+		$data['branch_id']   = $this->input->post('branch_id');
+        $data['month']   = $this->input->post('month');
+        $data['year']   = $this->input->post('year');
+		$data['page_title']  = 'Staff | '. $this->M_branch->get_branch($data['branch_id'] ).' | '.$data['month'].' | '.$data['year'];
+		$this->load->view($this->session->userdata('role').'/add_arrears2',$data);			
+    }
+
+	function refresh_arrears(){
+		$this->check_session();
+		$data['month']   = $this->input->post('month');
+        $data['year']   = $this->input->post('year');
+		$data['page_title']  = 'ARREARS FOR '.$data['month'].' | '.$data['year'];
+		$this->load->view($this->session->userdata('role').'/refresh_arrears',$data);			
     }
 
     function get_data_from_post(){

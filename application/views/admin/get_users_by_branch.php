@@ -2,22 +2,22 @@
 		<div class="row">
 				<div class="col-md-12">
 					<!-- BEGIN EXAMPLE TABLE PORTLET-->
-	          <div class="portlet box grey" style="border:1px solid #E5E5E5;">
+					<div class="portlet box grey" style="border:1px solid #E5E5E5;">
 						<div class="portlet-title">
 							<div class="caption">
 								<?=$page_title;?>
 							</div>
 
 						</div>
+					<form>
 						<div class="portlet-body">
 							<div class="table-toolbar">
 								<div class="row">
 									<br>
 									<div class="col-md-12">
-												<a href="<?=base_url();?>grade_group/read" class="btn default">
-											Add New
-											</a>
-
+										<button class="btn default" type="submit">
+											Save Overtimes
+										</button>
 									</div>
 									
 								</div>
@@ -27,31 +27,25 @@
 							<thead>
 							<tr>
 								<th style="width:3%;">#</th>
-								<th>Group</th>
-								<th></th>
+								<th>Name</th>
+								<th>Overtime</th>
 							</tr>
 							</thead>
 							<tbody>
 							<?php 
 							$count = 1;
-							foreach ($this->M_grade_group->get_grade_groups() as $row):?>
+							foreach ($this->M_user->get_users_by_branch($branch_id) as $row):?>
 							<tr>
 								<td><?=$count++;?></td>
-								<td><?=$row['grade_group'];?><br>
-									<?php if($row['point_based']){?>
-										point based
-									<?php } else{?>
-										not point based
-									<?php }?>
-								</td>
+								<td><?=$row['name'];?></td>
 								<td>
-									<div class="btn-group">
-										<a href="<?=base_url();?>grade_group/read/<?=$row['grade_group_id'];?>" class="btn default"><i class="fa fa-edit"></i></a>
+									<?php foreach($this->M_overtimetype->get_overtimetypes() as $row){?>
+										<?=$row['overtimetype'];?> 
+										 <input type="hidden" name="overtimetype_id[]" value="<?=$row['overtimetype_id'];?>">
+										 <input type="hidden" name="rate[]" value="<?=$row['rate'];?>">
+										 <input type="text" name="hours[]" placeholder="hours">
 										
-										<a href="<?=base_url();?>grade_group/delete/<?=$row['grade_group_id'];?>" class="btn default"><i class="fa fa-times-circle"></i></a>
-
-								
-									</div>
+									<?php }?>
 								</td>
 							</tr>
 							<?php endforeach;?>
@@ -59,6 +53,7 @@
 							</table>
 						</div>
 					</div>
+									</form>
 					<!-- END EXAMPLE TABLE PORTLET-->
 				</div>
 			</div>

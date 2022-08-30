@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-class parento extends CI_Controller {
+class overtime extends CI_Controller {
 
 	function __construct(){
 		parent::__construct();
@@ -13,8 +13,23 @@ class parento extends CI_Controller {
 
 	function index(){
 		$this->check_session();
-		$data['page_title']  = 'All parents';
-		$this->load->view($this->session->userdata('role').'/parents',$data);			
+		$data['page_title']  = 'All Overtimes';
+		$this->load->view($this->session->userdata('role').'/overtimes',$data);			
+    }
+
+	function add_overtime(){
+		$this->check_session();
+		$data['page_title']  = 'Add Overtimes |';
+		$this->load->view($this->session->userdata('role').'/add_overtime',$data);			
+    }
+
+	function get_users_by_branch(){
+		$this->check_session();
+		$data['branch_id']   = $this->input->post('branch_id');
+        $data['month']   = $this->input->post('month');
+        $data['year']   = $this->input->post('year');
+		$data['page_title']  = 'Staff | '. $this->M_branch->get_branch($data['branch_id'] );
+		$this->load->view($this->session->userdata('role').'/get_users_by_branch',$data);			
     }
 
    
@@ -65,9 +80,9 @@ class parento extends CI_Controller {
 
 	 $this->session->set_flashdata('message','Parent saved successfully');
 			if($update_id !=''):
-    			redirect('parento');
+    			redirect('overtime');
 			else:
-				redirect('parento/read');
+				redirect('overtime/read');
 			endif;
 	}
 
@@ -93,7 +108,7 @@ class parento extends CI_Controller {
 		$this->db->where('user_id',$param);
         $this->db->update('users',$data);
     	$this->session->set_flashdata('message','Parent deleted successfully');
-		redirect('parento');
+		redirect('overtime');
 	}
 	
 	

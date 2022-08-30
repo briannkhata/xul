@@ -14,6 +14,9 @@
                     <div class="row">
                         <br>
                         <div class="col-md-12">
+                        <a href="<?=base_url();?>bonus" class="btn default">
+                                Back
+                            </a>
                             <a href="#" class="btn default green-stripe">
                                 Print
                             </a>
@@ -21,29 +24,20 @@
                     </div>
                 </div>
                 <hr>
-                <table class="table table-striped table-bordered">
+                <table class="table table-bordered">
                     <thead>
                         <tr>
                             <th>Staff</th>
                             <th>Date</th>
                             <th>Amount</th>
-                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach ($this->M_arrear->get_arrears() as $row):?>
+                        <?php foreach ($this->M_bonus->get_bonuses_by_month_and_year($month,$year) as $row):?>
                         <tr>
                             <td><?=$this->M_user->get_user($row['user_id']);?></td>
                             <td><?=$row['month'];?> | <?=$row['year'];?> </td>
                             <td><?=number_format($row['amount'],2);?></td>
-                            <td>
-                                <div class="btn-group">
-                                    <a href="<?=base_url();?>arrear/read/<?=$row['arrear_id'];?>"
-                                        class="btn btn-sm default green-stripe"><i class="fa fa-edit"></i></a>
-                                    <a href="<?=base_url();?>arrear/delete/<?=$row['arrear_id'];?>"
-                                        class="btn btn-sm default red-stripe"><i class="fa fa-times-circle"></i></a>
-                                </div>
-                            </td>
                         </tr>
                         <?php endforeach;?>
                     </tbody>

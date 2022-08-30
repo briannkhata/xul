@@ -145,7 +145,7 @@ class M_leaveapplication extends CI_Model {
 	 }
  }
 
-	function get_date_approved($leaveapplication_id){
+ function get_date_approved($leaveapplication_id){
 	$this->db->where('leaveapplication_id',$leaveapplication_id);
 	$query = $this->db->get('leaveapplications')->result_array();
 	 if(count($query) > 0){
@@ -157,6 +157,5 @@ class M_leaveapplication extends CI_Model {
 	 }
    }
 
-	
 }
 

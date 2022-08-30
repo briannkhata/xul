@@ -44,6 +44,19 @@ class M_user extends CI_Model {
 			
 		}
 
+		function get_grade_id($user_id){
+		$this->db->where('user_id',$user_id);
+		 $query = $this->db->get('users')->result_array();
+		 if(count($query) > 0){
+			 foreach ($query as $row) {
+				 return $row['grade_id'];
+			 }
+		 }else {
+			 return '';
+		 }
+		 
+	 }
+
 		function get_gender($user_id){
    		    $this->db->where('user_id',$user_id);
 			$query = $this->db->get('users')->result_array();

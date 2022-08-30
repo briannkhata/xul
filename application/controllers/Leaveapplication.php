@@ -38,6 +38,11 @@ class leaveapplication extends CI_Controller {
 
 	function approve(){
 		$leaveapplication_id = $this->input->post('leaveapplication_id');
+		$user_id = $this->M_leavapplication->get_user_id($leaveapplication_id);
+		$grade_id = $this->M_user->get_grade_id($user_id);
+		$leavedays = $this->M_user->get_leavedays($grade_id);//get leave days for that grade
+
+
 		$start_date = date('Y-m-d',strtotime($this->M_leaveapplication->get_start_date($leaveapplication_id)));
 		$data['days_approved'] = $this->input->post('days_approved');
         $data['approved_by'] = $this->session->userdata('user_id');
