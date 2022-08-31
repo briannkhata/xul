@@ -8,7 +8,7 @@
 									</div>
 									<div class="portlet-body form">
 										<!-- BEGIN FORM-->
-										<form action="<?=base_url();?>user/save2" method="post" class="horizontal-form" enctype="multipart/form-data">
+										<form action="<?=base_url();?>user/save" method="post" class="horizontal-form" enctype="multipart/form-data">
 											<div class="form-body">
 												<br>
 												
@@ -25,19 +25,75 @@
 												<div class="row">
 													<div class="col-md-4">
 														<div class="form-group">
-															<label class="control-label">Username</label>
-															<input type="text" name="username" class="form-control" value="<?php if (!empty($username)){echo $username;}?>">
+															<label class="control-label">Phone 1</label>
+															<input type="text" name="phone1" class="form-control" value="<?php if (!empty($phone1)){echo $phone1;}?>">
+														</div>
+													</div>
+													<div class="col-md-4">
+														<div class="form-group">
+															<label class="control-label">Phone 2</label>
+															<input type="text" name="phone2" class="form-control" value="<?php if (!empty($phone2)){echo $phone2;}?>">
+														</div>
+													</div>
+													<div class="col-md-4">
+														<div class="form-group">
+															<label class="control-label">Phone 3</label>
+															<input type="text" name="phone3" class="form-control" value="<?php if (!empty($phone3)){echo $phone3;}?>">
+														</div>
+													</div>
+												</div>
+
+												<div class="row">
+													<div class="col-md-4">
+														<div class="form-group">
+															<label class="control-label">Email 1</label>
+															<input type="text" name="email1" class="form-control" value="<?php if (!empty($email1)){echo $email1;}?>">
+														</div>
+													</div>
+													<div class="col-md-4">
+														<div class="form-group">
+															<label class="control-label">Email 2</label>
+															<input type="text" name="email2" class="form-control" value="<?php if (!empty($email2)){echo $email2;}?>">
+														</div>
+													</div>
+													<div class="col-md-4">
+														<div class="form-group">
+															<label class="control-label">Email 3</label>
+															<input type="text" name="email3" class="form-control" value="<?php if (!empty($email3)){echo $email3;}?>">
+														</div>
+													</div>
+												</div>
+
+												<div class="row">
+												<div class="col-md-3">
+														<div class="form-group">
+															<label class="control-label">Gender</label>
+															<select name="gender" class="form-control">
+															<option selected="" disabled="">Option</option>
+															<option <?php if ($gender=='Female') echo 'selected';?> value="Female">
+															Female</option>
+																<option <?php if ($gender=='Male') echo 'selected';?> value="Male">
+																Male</option>
+															</select>
+														
 														</div>
 													</div>
 
-													<div class="col-md-4">
+													<div class="col-md-3">
 														<div class="form-group">
-															<label class="control-label">Password</label>
+															<label class="control-label">Nationality</label>
 															<input type="text" name="nationality" class="form-control" value="<?php if (!empty($nationality)){echo $nationality;}?>" required>
 														</div>
 													</div>
+												
+													<div class="col-md-3">
+														<div class="form-group">
+															<label class="control-label">National Id</label>
+															<input type="text" name="national_id" class="form-control" value="<?php if (!empty($national_id)){echo $national_id;}?>" required>
+														</div>
+													</div>
 
-													<div class="col-md-4">
+													<div class="col-md-3">
 														<div class="form-group">
 															<label class="control-label">Staff type</label>
 															<select class="form-control" name="staff_type_id">
@@ -54,21 +110,6 @@
 
 												<div class="row">
 													
-													<div class="col-md-4">
-														<div class="form-group">
-															<label class="control-label">Gender</label>
-															<select name="gender" class="form-control">
-															<option selected="" disabled="">Option</option>
-												<option <?php if ($gender=='female') echo 'selected';?> value="female">
-												Female</option>
-
-
-												<option <?php if ($gender=='male') echo 'selected';?> value="male">
-												Male</option>
-															</select>
-														
-														</div>
-													</div>
 												
 													<div class="col-md-4">
 														<div class="form-group">
@@ -87,33 +128,56 @@
 													</div>
 												<div class="row">
 												
-													<div class="col-md-6">
+													<div class="col-md-4">
 														<div class="form-group">
-															<label class="control-label">Postal Address</label>
-															<textarea class="form-control" name="postal_address">
-																<?php if (!empty($postal_address)){echo $postal_address;}?>
+															<label class="control-label">Next of Keen Details</label>
+															<textarea class="form-control" name="nextofkin">
+																<?php if (!empty($nextofkin)){echo $nextofkin;}?>
 															</textarea>
 														</div>
 													</div>
 
-													<div class="col-md-6">
+													<div class="col-md-4">
+														<div class="form-group">
+															<label class="control-label">Postal Address</label>
+															<textarea class="form-control" name="contactaddress">
+																<?php if (!empty($contactaddress)){echo $contactaddress;}?>
+															</textarea>
+														</div>
+													</div>
+
+													<div class="col-md-4">
 														<div class="form-group">
 															<label class="control-label">Physical Address</label>
 															<textarea class="form-control" name="physical_address">
-																<?php if (!empty($physical_address)){echo $physical_address;}?>
+																<?php if (!empty($physicaladdress)){echo $physicaladdress;}?>
 															</textarea>
 														</div>
 													</div>
 												</div>
 
 												<div class="row">
-													<div class="col-md-12">
+													<div class="col-md-3">
+															<div class="form-group">
+																<label class="control-label">Branch</label>
+																<select class="form-control" name="branch_id">
+																	<option selected="" disabled="">Option</option>
+																		<?php foreach ($this->M_branch->get_branches() as $row){?>
+																		<option <?php if($branch_id == $row['branch_id']) echo 'selected';?> value="<?=$row['branch_id'];?>">
+																		<?=$row['name'];?>
+																	</option>
+																<?php }?>
+																</select>
+															</div>
+														</div>
+
+													<div class="col-md-3">
 														<div class="form-group">
 															<label class="control-label">Department</label>
 															<select class="form-control" name="department_id">
 																<option selected="" disabled="">Option</option>
-											<?php foreach ($this->M_department->get_departments() as $row){?>
-											<option value="<?=$row['department_id'];?>">
+																	<?php foreach ($this->M_department->get_departments() as $row){?>
+																	<option <?php if($department_id == $row['department_id']) echo 'selected';?> value="<?=$row['department_id'];?>">
 																	<?=$row['department'];?>
 																</option>
 															<?php }?>
@@ -121,15 +185,41 @@
 														</div>
 													</div>
 
-													
+													<div class="col-md-3">
+														<div class="form-group">
+															<label class="control-label">Job Title</label>
+															<select class="form-control" name="job_id">
+																<option selected="" disabled="">Option</option>
+																	<?php foreach ($this->M_job->get_jobs() as $row){?>
+																	<option <?php if($job_id == $row['job_id']) echo 'selected';?> value="<?=$row['job_id'];?>">
+																	<?=$row['job'];?>
+																</option>
+															<?php }?>
+															</select>
+														</div>
+													</div>
+
+													<div class="col-md-3">
+														<div class="form-group">
+															<label class="control-label">Grade</label>
+															<select class="form-control" name="grade_id">
+																<option selected="" disabled="">Option</option>
+																	<?php foreach ($this->M_grade->get_grades() as $row){?>
+																	<option <?php if($grade_id == $row['grade_id']) echo 'selected';?> value="<?=$row['grade_id'];?>">
+																	<?=$row['grade'];?>
+																</option>
+															<?php }?>
+															</select>
+														</div>
+													</div>
 												</div>
 												
 
 											</div>
 											<div class="form-actions left">
 											       <?php if (isset($update_id)){?>
-                                    <input type="hidden" name="update_id" id="update_id" value="<?=$update_id;?>">
-                              <?php }?>
+														<input type="hidden" name="update_id" id="update_id" value="<?=$update_id;?>">
+												<?php }?>
 												<button type="submit" class="btn default blue-stripe"> Save</button>
 												<a href="<?=base_url();?>user/staffs" class="btn default green-stripe"> Back</a>
 											</div>
