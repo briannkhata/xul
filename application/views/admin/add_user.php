@@ -65,7 +65,7 @@
 												</div>
 
 												<div class="row">
-												<div class="col-md-3">
+													<div class="col-md-4">
 														<div class="form-group">
 															<label class="control-label">Gender</label>
 															<select name="gender" class="form-control">
@@ -79,27 +79,68 @@
 														</div>
 													</div>
 
-													<div class="col-md-3">
+													<div class="col-md-4">
+														<div class="form-group">
+															<label class="control-label">Marital Status</label>
+															<select name="marital_status" class="form-control">
+															<option selected="" disabled="">Option</option>
+															<option <?php if ($marital_status=='Single') echo 'selected';?> value="Single">
+															Single</option>
+															<option <?php if ($marital_status=='Married') echo 'selected';?> value="Married">
+																Married</option>
+															
+																<option <?php if ($marital_status=='Widowed') echo 'selected';?> value="Widowed">
+																Widowed</option>
+
+																<option <?php if ($marital_status=='Divorced') echo 'selected';?> value="Divorced">
+																Divorced</option>
+															</select>
+														
+														</div>
+													</div>
+
+													<div class="col-md-4">
+															<div class="form-group">
+																<label class="control-label">Branch</label>
+																<select class="form-control" name="branch_id">
+																	<option selected="" disabled="">Option</option>
+																		<?php foreach ($this->M_branch->get_branches() as $row){?>
+																		<option <?php if($branch_id == $row['branch_id']) echo 'selected';?> value="<?=$row['branch_id'];?>">
+																		<?=$row['name'];?>
+																	</option>
+																<?php }?>
+																</select>
+															</div>
+														</div>
+
+
+													
+												
+
+												</div>
+
+												<div class="row">
+													<div class="col-md-4">
 														<div class="form-group">
 															<label class="control-label">Nationality</label>
 															<input type="text" name="nationality" class="form-control" value="<?php if (!empty($nationality)){echo $nationality;}?>" required>
 														</div>
 													</div>
 												
-													<div class="col-md-3">
+													<div class="col-md-4">
 														<div class="form-group">
 															<label class="control-label">National Id</label>
 															<input type="text" name="national_id" class="form-control" value="<?php if (!empty($national_id)){echo $national_id;}?>" required>
 														</div>
 													</div>
 
-													<div class="col-md-3">
+													<div class="col-md-4">
 														<div class="form-group">
 															<label class="control-label">Staff type</label>
 															<select class="form-control" name="staff_type_id">
 																<option selected="" disabled="">Option</option>
-											<?php foreach ($this->M_staff_type->get_staff_types() as $row){?>
-											<option value="<?=$row['staff_type_id'];?>">
+																	<?php foreach ($this->M_staff_type->get_staff_types() as $row){?>
+																	<option value="<?=$row['staff_type_id'];?>">
 																	<?=$row['staff_type'];?>
 																</option>
 															<?php }?>
@@ -109,25 +150,34 @@
 												</div>
 
 												<div class="row">
-													
-												
 													<div class="col-md-4">
 														<div class="form-group">
-															<label class="control-label">Phone</label>
-															<input type="tel" name="phone" class="form-control" value="<?php if (!empty($phone)){echo $phone;}?>" required>
+															<label class="control-label">On Pension</label>
+															<select name="on_pension" class="form-control">
+															<option selected="" disabled="">Option</option>
+															<option <?php if ($on_pension=='1') echo 'selected';?> value="1">
+																Yes</option>
+																<option <?php if ($on_pension=='0') echo 'selected';?> value="0">
+																No</option>
+															</select>
+														</div>
+													</div>
+													<div class="col-md-4">
+														<div class="form-group">
+															<label class="control-label">Date of Birth</label>
+															<input type="date" name="dob" class="form-control" value="<?php if (!empty($dob)){echo $dob;}?>" required>
 														</div>
 													</div>
 
 													<div class="col-md-4">
 														<div class="form-group">
-															<label class="control-label">Email</label>
-															<input type="email" name="email" class="form-control" value="<?php if (!empty($email)){echo $email;}?>" required>
+															<label class="control-label">Start Date</label>
+															<input type="date" name="startdate" class="form-control" value="<?php if (!empty($startdate)){echo $startdate;}?>" required>
 														</div>
-													</div>
-										
-													</div>
+													</div>										
+												</div>
+
 												<div class="row">
-												
 													<div class="col-md-4">
 														<div class="form-group">
 															<label class="control-label">Next of Keen Details</label>
@@ -157,21 +207,8 @@
 												</div>
 
 												<div class="row">
-													<div class="col-md-3">
-															<div class="form-group">
-																<label class="control-label">Branch</label>
-																<select class="form-control" name="branch_id">
-																	<option selected="" disabled="">Option</option>
-																		<?php foreach ($this->M_branch->get_branches() as $row){?>
-																		<option <?php if($branch_id == $row['branch_id']) echo 'selected';?> value="<?=$row['branch_id'];?>">
-																		<?=$row['name'];?>
-																	</option>
-																<?php }?>
-																</select>
-															</div>
-														</div>
-
-													<div class="col-md-3">
+													
+													<div class="col-md-4">
 														<div class="form-group">
 															<label class="control-label">Department</label>
 															<select class="form-control" name="department_id">
@@ -185,7 +222,7 @@
 														</div>
 													</div>
 
-													<div class="col-md-3">
+													<div class="col-md-4">
 														<div class="form-group">
 															<label class="control-label">Job Title</label>
 															<select class="form-control" name="job_id">
@@ -199,7 +236,7 @@
 														</div>
 													</div>
 
-													<div class="col-md-3">
+													<div class="col-md-4">
 														<div class="form-group">
 															<label class="control-label">Grade</label>
 															<select class="form-control" name="grade_id">
@@ -213,12 +250,100 @@
 														</div>
 													</div>
 												</div>
+
+												<div class="row">
+													<div class="col-md-12">
+														<div class="form-group">
+															<label class="control-label">Disability</label>
+															<textarea class="form-control" name="nextofkin">
+																<?php if (!empty($disability)){echo $disability;}?>
+															</textarea>
+														</div>
+													</div>
+												</div>
+
+												<div class="row">
+																		
+												<div class="col-md-4">
+														<div class="form-group">
+															<label class="control-label">Scheme Type</label>
+															<select class="form-control" name="schemetype_id">
+																<option selected="" disabled="">Option</option>
+																	<?php foreach($this->M_schemetype->get_schemetypes() as $row){?>
+																	<option <?php if($schemetype_id == $row['schemetype_id']) echo 'selected';?> value="<?=$row['schemetype_id'];?>">
+																	<?=$row['schemetype'];?>
+																</option>
+															<?php }?>
+															</select>
+														</div>
+													</div>					
+
+													<div class="col-md-4">
+														<div class="form-group">
+															<label class="control-label">Membership Number</label>
+															<input type="text" name="membership_number" class="form-control" value="<?php if (!empty($membership_number)){echo $membership_number;}?>">
+														</div>
+													</div>
+
+													<div class="col-md-4">
+														<div class="form-group">
+															<label class="control-label">Membershiptype</label>
+															<select class="form-control" name="membershiptype_id">
+																<option selected="" disabled="">Option</option>
+																	<?php foreach($this->M_membershiptype->get_membershiptypes() as $row){?>
+																	<option <?php if($membershiptype_id == $row['membershiptype_id']) echo 'selected';?> value="<?=$row['membershiptype_id'];?>">
+																	<?=$row['membershiptype'];?>
+																</option>
+															<?php }?>
+															</select>
+														</div>
+													</div>							
+												</div>
+
+
+											<div class="row">
+												<div class="col-md-3">
+														<div class="form-group">
+															<label class="control-label">Bank</label>
+															<select class="form-control" name="bank_id">
+																<option selected="" disabled="">Option</option>
+																	<?php foreach($this->M_bank->get_banks() as $row){?>
+																	<option <?php if($bank_id == $row['bank_id']) echo 'selected';?> value="<?=$row['bank_id'];?>">
+																	<?=$row['bank'];?>
+																</option>
+															<?php }?>
+															</select>
+														</div>
+													</div>					
+
+													<div class="col-md-3">
+														<div class="form-group">
+															<label class="control-label">Account Number</label>
+															<input type="text" name="account_number" class="form-control" value="<?php if (!empty($account_number)){echo $account_number;}?>">
+														</div>
+													</div>
+
+													<div class="col-md-3">
+														<div class="form-group">
+															<label class="control-label">Account Type</label>
+															<input type="text" name="account_type" class="form-control" value="<?php if (!empty($account_type)){echo $account_type;}?>">
+														</div>
+													</div>
+
+													<div class="col-md-3">
+														<div class="form-group">
+															<label class="control-label">Branch</label>
+															<input type="text" name="branch" class="form-control" value="<?php if (!empty($branch)){echo $branch;}?>">
+														</div>
+													</div>
+					
+												</div>
 												
 
 											</div>
 											<div class="form-actions left">
-											       <?php if (isset($update_id)){?>
-														<input type="hidden" name="update_id" id="update_id" value="<?=$update_id;?>">
+											    <?php if (isset($update_id)){?>
+													<input type="hidden" name="update_id" id="update_id" value="<?=$update_id;?>">
 												<?php }?>
 												<button type="submit" class="btn default blue-stripe"> Save</button>
 												<a href="<?=base_url();?>user/staffs" class="btn default green-stripe"> Back</a>

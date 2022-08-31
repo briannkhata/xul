@@ -57,13 +57,19 @@ class User extends CI_Controller {
   		$data['account_number']  = $this->input->post('account_number');
   		$data['account_type']  = $this->input->post('account_type');
   		$data['branch']  = $this->input->post('branch');
-  		$data['scheme_id']  = $this->input->post('scheme_id');
+  		$data['schemetype_id']  = $this->input->post('schemetype_id');
   		$data['membership_number']  = $this->input->post('membership_number');
   		$data['membershiptype_id']  = $this->input->post('membershiptype_id');
   		$data['staff_no']  = $this->input->post('staff_no');
 		$data['nextofkin']  = $this->input->post('nextofkin');
   		$data['staff_type_id']  = $this->input->post('staff_type_id');
+		
 		$data['marital_status']  = $this->input->post('marital_status');
+		$data['bank_id']  = $this->input->post('bank_id');
+		$data['account_number']  = $this->input->post('account_number');
+		$data['account_type']  = $this->input->post('account_type');
+		$data['branch']  = $this->input->post('branch');
+
 	  	$data['staff_no']  = rand(10000,99999);
 		return $data;
     }
@@ -96,7 +102,7 @@ class User extends CI_Controller {
 			$data['account_number'] = $row['account_number'];
 			$data['account_type'] = $row['account_type'];
 			$data['branch']  = $row['branch'];
-			$data['scheme_id']  = $row['scheme_id'];
+			$data['schemetype_id']  = $row['schemetype_id'];
 			$data['membership_number']  = $row['membership_number'];
 			$data['membershiptype_id']  = $row['membershiptype_id'];
 			$data['staff_no']  = $row['staff_no'];
